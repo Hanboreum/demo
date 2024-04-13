@@ -2,10 +2,7 @@ package com.example.demo.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @ResponseBody // 바디에 담아서 던져준다.?
@@ -23,9 +20,11 @@ public class ProductController {
        // ProductService productService = new ProductService();
         return productService.findProduct();
     }
+
     //등록. @RequestMapping? 괄호안 url, method가 오면 아래 메서드 출력
     @RequestMapping(value = "products",method = RequestMethod.POST)
-    public void saveProduct(){
-        productService.saveProduct();
+    public void saveProduct(@RequestParam (value ="name")String productName){
+        //localhost:8080/product?name=____ <- 이걸 productName에 담아줌
+        productService.saveProduct(productName);
     }
 }

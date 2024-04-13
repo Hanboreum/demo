@@ -14,7 +14,7 @@ public class ProductRepository {
     public String findProduct(){
         return db.get(1);
     }
-    public void save(){ //상품 저장
-        db.put(id++ ,"notebOOk");
+    public void save(String productName){ //상품 저장
+        db.put(id++ ,productName);
     }
 }
