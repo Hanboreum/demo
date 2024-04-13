@@ -18,8 +18,7 @@ public class ProductController {
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET) // 괄호안 내용(url,GET) 요청이 오면 이걸 실행
     public String findProduct(@PathVariable("id")int id ){
        // ProductService productService = new ProductService();
-        System.out.println(id);
-        return productService.findProduct();
+        return productService.findProduct(id);
     }
 
     //등록. @RequestMapping? 괄호안 url, method가 오면 아래 메서드 출력
