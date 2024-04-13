@@ -5,8 +5,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProductService {
-    @Autowired
-    private ProductRepository productRepository;
+
+    private ProductRepository productRepository; //생성자가 생긴다고 필드가 사라지진 않는다.
+
+    @Autowired // 생성자로DI
+    ProductService(ProductRepository productRepository){
+        this.productRepository = productRepository;
+    }
     public String findProduct(){
         return productRepository.findProduct();
     }
