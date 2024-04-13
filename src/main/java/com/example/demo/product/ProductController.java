@@ -18,9 +18,14 @@ public class ProductController {
     private ProductService productService; //필드는 private으로
 
     //조회, 사용자가 요청한거니까 사용자 입장에서 네이밍
-    @RequestMapping(value = "", method = RequestMethod.GET) // 괄호안 내용(url,GET) 요청이 오면 이걸 실행
+    @RequestMapping(value = "/products", method = RequestMethod.GET) // 괄호안 내용(url,GET) 요청이 오면 이걸 실행
     public String findProduct( ){
        // ProductService productService = new ProductService();
         return productService.findProduct();
+    }
+    //등록. @RequestMapping? 괄호안 url, method가 오면 아래 메서드 출력
+    @RequestMapping(value = "products",method = RequestMethod.POST)
+    public void saveProduct(){
+        productService.saveProduct();
     }
 }

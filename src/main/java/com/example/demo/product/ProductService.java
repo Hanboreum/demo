@@ -15,4 +15,8 @@ public class ProductService {
     public String findProduct(){
         return productRepository.findProduct();
     }
+
+    public void saveProduct(){
+        productRepository.save();
+    }
 }

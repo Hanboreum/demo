@@ -12,7 +12,9 @@ public class ProductRepository {
     private int id= 1;
 
     public String findProduct(){
-        return " NoTeBOok";
+        return db.get(1);
     }
-
+    public void save(){ //상품 저장
+        db.put(id++ ,"notebOOk");
+    }
 }
