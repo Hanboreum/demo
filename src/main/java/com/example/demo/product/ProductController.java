@@ -15,9 +15,10 @@ public class ProductController {
     private ProductService productService; //필드는 private으로
 
     //조회, 사용자가 요청한거니까 사용자 입장에서 네이밍
-    @RequestMapping(value = "/products", method = RequestMethod.GET) // 괄호안 내용(url,GET) 요청이 오면 이걸 실행
-    public String findProduct( ){
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET) // 괄호안 내용(url,GET) 요청이 오면 이걸 실행
+    public String findProduct(@PathVariable("id")int id ){
        // ProductService productService = new ProductService();
+        System.out.println(id);
         return productService.findProduct();
     }
 
