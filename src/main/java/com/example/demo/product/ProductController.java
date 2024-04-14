@@ -22,9 +22,9 @@ public class ProductController {
     }
 
     //등록. @RequestMapping? 괄호안 url, method가 오면 아래 메서드 출력
+    //localhost:8080/products
     @RequestMapping(value = "products",method = RequestMethod.POST)
     public void saveProduct(@RequestBody Product product){
-        System.out.println("POST");
         productService.saveProduct(product);
     }
 }
