@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository
+//@Repository
 public class ProductRepository {
     private Map<Integer, Product> db = new HashMap<>();
     private int id= 1;
