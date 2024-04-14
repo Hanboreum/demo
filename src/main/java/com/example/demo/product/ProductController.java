@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 //C-post R-get U- put D-delete
 @RestController
@@ -15,7 +17,13 @@ public class ProductController {
     @Autowired
     private ProductService productService; //필드는 private으로
 
-    //조회, 사용자가 요청한거니까 사용자 입장에서 네이밍
+    //전체조회
+    @GetMapping("/products")
+    public List<Product> findAllProducts(){
+        return productService.findAllProducts();
+    }
+
+    //개별 조회, 사용자가 요청한거니까 사용자 입장에서 네이밍
     @GetMapping("/products/{id}")
     public Product findProduct(@PathVariable("id")int id ){ //pathvariabl로 아이디 받아서 서비스 일시키기
        // ProductService productService = new ProductService();
@@ -28,6 +36,7 @@ public class ProductController {
     public void saveProduct(@RequestBody Product product){
         productService.saveProduct(product);
     }
+
 
 }
 
