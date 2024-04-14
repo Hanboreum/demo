@@ -18,11 +18,15 @@ public class ProductService {
     public void saveProduct(Product product){
         productRepository.save(product);
     }
-
 }
 
 /*
 public void saveProduct(String productName){
         productRepository.save(productName);
     }
+ */
+/*
+  public void deleteProduct(int id) {  productRepository.delete(id);}
+    public Product findAllProduct(){return productRepository.findAllProduct();}
+
  */

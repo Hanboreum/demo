@@ -19,12 +19,21 @@ public class ProductRepository {
         System.out.println(product.getName());
        db.put(id++ ,product);
     }
-
 }
 
 /*
     public void save(Product product){
         db.put(id++, product);
+    }
+
+ */
+
+/*
+ public void delete (int idx){
+        db.remove(idx);
+    }
+    public Product findAllProduct(){
+        return findAllProduct();
     }
 
  */
