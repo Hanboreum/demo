@@ -20,7 +20,7 @@ public class ProductController {
     //전체조회
     @GetMapping("/products")
     public List<Product> findAllProducts(){
-        return productService.findAllProducts();
+        return productService.findAllProducts(); //json array
     }
 
     //개별 조회, 사용자가 요청한거니까 사용자 입장에서 네이밍
@@ -36,8 +36,6 @@ public class ProductController {
     public void saveProduct(@RequestBody Product product){
         productService.saveProduct(product);
     }
-
-
 }
 
 /*
