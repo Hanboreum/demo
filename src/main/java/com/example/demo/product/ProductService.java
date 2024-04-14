@@ -15,8 +15,14 @@ public class ProductService {
     public String findProduct(int id){
         return productRepository.findProduct(id);
     }
+    public void saveProduct(Product product){
+        productRepository.save(product);
+    }
 
-    public void saveProduct(String productName){
+}
+
+/*
+public void saveProduct(String productName){
         productRepository.save(productName);
     }
-}
+ */

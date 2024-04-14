@@ -23,8 +23,16 @@ public class ProductController {
 
     //등록. @RequestMapping? 괄호안 url, method가 오면 아래 메서드 출력
     @RequestMapping(value = "products",method = RequestMethod.POST)
+    public void saveProduct(@RequestBody Product product){
+        System.out.println("POST");
+        productService.saveProduct(product);
+    }
+}
+
+/*
+ @RequestMapping(value = "products",method = RequestMethod.POST)
     public void saveProduct(@RequestParam (value ="name")String productName){
         //localhost:8080/product?name=____ <- 이걸 productName에 담아줌
         productService.saveProduct(productName);
     }
-}
+ */
