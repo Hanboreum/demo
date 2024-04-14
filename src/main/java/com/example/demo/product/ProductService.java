@@ -12,7 +12,7 @@ public class ProductService {
     ProductService(ProductRepository productRepository){
         this.productRepository = productRepository;
     }
-    public String findProduct(int id){
+    public Product findProduct(int id){
         return productRepository.findProduct(id);
     }
     public void saveProduct(Product product){
