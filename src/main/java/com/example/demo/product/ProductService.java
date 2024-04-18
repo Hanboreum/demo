@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//controller의 지시를 받고 repo에서 데이터를 가져옴
 @Service
 public class ProductService {
 

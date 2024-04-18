@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+// 사용자의 요청을 받고, service에게 전달
 //C-post R-get U- put D-delete
 @RestController
 public class ProductController {

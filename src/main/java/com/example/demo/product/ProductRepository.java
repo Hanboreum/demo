@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-//@Repository
+//데이터 관리하는 (주고받고) 하는 클래스
+@Repository
 public class ProductRepository {
     private Map<Integer, Product> db = new HashMap<>();
     private int id= 1;
