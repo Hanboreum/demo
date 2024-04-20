@@ -33,7 +33,9 @@ public class ProductRepository {
     }
 
     public void save(Product product){ //상품 저장
-       db.put(id++ ,product);
+        System.out.println(product.getName());
+       //db.put(id++ ,product);
+        entityManager.persist(product);
     }
 
     public List<Product> findAllProducts() {
