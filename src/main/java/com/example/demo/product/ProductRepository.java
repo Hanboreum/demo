@@ -12,6 +12,8 @@ import java.util.Map;
 //@Repository
 public class ProductRepository {
 
+    @Autowired
+    DataSource dataSource;
     private Map<Integer, Product> db = new HashMap<>();
     private int id= 1;
 
