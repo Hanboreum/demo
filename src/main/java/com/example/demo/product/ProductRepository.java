@@ -1,5 +1,6 @@
 package com.example.demo.product;
 
+import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Repository;
@@ -14,7 +15,8 @@ import java.util.Map;
 public class ProductRepository {
 
     @Autowired
-    DataSource dataSource;
+    EntityManager entityManager;
+    //DataSource dataSource;
     private Map<Integer, Product> db = new HashMap<>();
     private int id= 1;
 
