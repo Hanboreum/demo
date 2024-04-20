@@ -1,6 +1,7 @@
 package com.example.demo.product;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Repository;
@@ -36,7 +37,11 @@ public class ProductRepository {
     }
 
     public List<Product> findAllProducts() {
-        return new ArrayList<>(db.values()); // map db에 넣어둔 values 값
+        //return new ArrayList<>(db.values()); // map db에 넣어둔 values 값
+        TypedQuery<Product> query =  entityManager //entity 매니저에게
+                .createQuery("  SELECT p FROM Product p",Product.class ); //이 쿼리 만들어서 (원하는 sql ,entity)
+                 List<Product> productsList = query.getResultList();
+                 return productsList;
     }
 }
 
