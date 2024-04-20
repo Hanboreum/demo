@@ -17,6 +17,10 @@ public class ProductController {
     @Autowired
     private ProductService productService; //필드는 private으로
 
+    @GetMapping("/connectdb")
+    public void makeConnection(){
+        productService.makeConnection();
+    }
     //전체조회
     @GetMapping("/products")
     public List<Product> findAllProducts(){

@@ -1,6 +1,7 @@
 package com.example.demo.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
@@ -16,6 +17,12 @@ public class ProductRepository {
     DataSource dataSource;
     private Map<Integer, Product> db = new HashMap<>();
     private int id= 1;
+
+    //datasource로 터널 만들기
+    public void makeConnection (){
+        DataSourceUtils.getConnection(dataSource);
+        //연결하기 , 안되면 에러남
+    }
 
     public Product findProduct(int idx){
         return db.get(idx);
