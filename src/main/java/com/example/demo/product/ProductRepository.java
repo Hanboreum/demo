@@ -19,10 +19,10 @@ public class ProductRepository {
     private int id= 1;
 
     //datasource로 터널 만들기
-    public void makeConnection (){
+  /*  public void makeConnection (){
         DataSourceUtils.getConnection(dataSource);
         //연결하기 , 안되면 에러남
-    }
+    }*/
 
     public Product findProduct(int idx){
         return db.get(idx);
