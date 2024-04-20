@@ -1,14 +1,17 @@
 package com.example.demo.product;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 //데이터 관리하는 (주고받고) 하는 클래스
-@Repository
+//@Repository
 public class ProductRepository {
+
     private Map<Integer, Product> db = new HashMap<>();
     private int id= 1;
 
