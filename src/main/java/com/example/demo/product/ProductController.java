@@ -16,11 +16,13 @@ public class ProductController {
     // 그에 맞는 서비스에게 전달. //handler?
     @Autowired
     private ProductService productService; //필드는 private으로
-
-  /*  @GetMapping("/connectdb")
+/*
+    @GetMapping("/connectdb")
     public void makeConnection(){
         productService.makeConnection();
-    }*/
+    }
+
+ */
     //전체조회
     @GetMapping("/products")
     public List<Product> findAllProducts(){

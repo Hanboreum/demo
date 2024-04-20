@@ -18,7 +18,8 @@ public class ProductService {
 
     /*public void makeConnection(){
         productRepository.makeConnection();
-    }*/
+    }
+     */
 
     public Product findProduct(int id){
         return productRepository.findProduct(id);
