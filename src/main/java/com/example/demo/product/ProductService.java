@@ -1,5 +1,6 @@
 package com.example.demo.product;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,7 @@ public class ProductService {
     public Product findProduct(int id){
         return productRepository.findProduct(id);
     }
+   @Transactional
     public void saveProduct(Product product){
         productRepository.save(product);
     }
