@@ -8,14 +8,17 @@ import java.util.List;
 
 //controller의 지시를 받고 repo에서 데이터를 가져옴
 @Service
+
 public class ProductService {
 
-    private ProductRepository productRepository; //생성자가 생긴다고 필드가 사라지진 않는다.
+    @Autowired
+    private SpringDataJPAProductRepository springDataJPAProductRepository;
+    /*private ProductRepository productRepository; //생성자가 생긴다고 필드가 사라지진 않는다.
 
     @Autowired // 생성자로DI
     ProductService(ProductRepository productRepository){
         this.productRepository = productRepository;
-    }
+    }*/
 
     /*public void makeConnection(){
         productRepository.makeConnection();
@@ -23,13 +26,15 @@ public class ProductService {
      */
 
     public Product findProduct(int id){
-        return productRepository.findProduct(id);
+        return springDataJPAProductRepository.findById(id).get();
     }
    @Transactional
     public void saveProduct(Product product){
-        productRepository.save(product);
+       springDataJPAProductRepository.save(product);
     }
-    public List<Product>findAllProducts() { return productRepository.findAllProducts();}
+    public List<Product>findAllProducts() {
+        return springDataJPAProductRepository.findAll();
+    }
 }
 
 /*
