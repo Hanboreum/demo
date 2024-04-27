@@ -35,6 +35,10 @@ public class ProductService {
     public List<Product>findAllProducts() {
         return springDataJPAProductRepository.findAll();
     }
+
+    public List<Product> findByPriceLessThan(int price) {
+        return springDataJPAProductRepository.findByPriceLessThan(price);
+    }
 }
 
 /*

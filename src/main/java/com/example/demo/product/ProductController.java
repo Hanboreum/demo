@@ -9,6 +9,7 @@ import java.util.List;
 // 사용자의 요청을 받고, service에게 전달
 //C-post R-get U- put D-delete
 @RestController
+@RequestMapping("/products")
 public class ProductController {
     // 사용자의 요청이 오면(이걸 컨트롤러가 받는다.)
     //요청에 맞는 메소드 실행.
@@ -24,13 +25,13 @@ public class ProductController {
 
  */
     //전체조회
-    @GetMapping("/products")
+    @GetMapping("")
     public List<Product> findAllProducts(){
         return productService.findAllProducts(); //json array
     }
 
     //개별 조회, 사용자가 요청한거니까 사용자 입장에서 네이밍
-    @GetMapping("/products/{id}")
+    @GetMapping("/{id}")
     public Product findProduct(@PathVariable("id")int id ){ //pathvariabl로 아이디 받아서 서비스 일시키기
        // ProductService productService = new ProductService();
         return productService.findProduct(id);
@@ -41,6 +42,11 @@ public class ProductController {
     @PostMapping("/products")
     public void saveProduct(@RequestBody Product product){
         productService.saveProduct(product);
+    }
+
+    @GetMapping("/price/{price}")
+    public List<Product> findByPriceLessThan(@PathVariable("price") int price){
+        return productService.findByPriceLessThan(price);
     }
 }
 
